@@ -9,3 +9,10 @@ export PS1="\$( [ -z \"\$CONDA_DEFAULT_ENV\" ] && echo '\[\e[43m\] \[\e[0m\]') \
 ```
 
 Now the colored block is shown correctly whether or not an environment is active.
+
+
+```
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+```
